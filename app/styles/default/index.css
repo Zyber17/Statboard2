@@ -90,86 +90,13 @@ a:active {
     background-color: rgba(255,255,255,0.025); }
   .pane h2 {
     font-size: 24px; }
-
-.mint h2 {
-  color: #b2d679; }
-
-.fever h2 {
-  color: #d04334; }
-
-.feedburner h2 {
-  color: #d07c34; }
-
-.twitter h2 {
-  color: #6aa9ca; }
-
-.ember h2 {
-  color: #dd752c; }
-
-.greader h2 {
-  color: #ebeff9; }
-
-.weather h2 {
-  color: #97d6ff; }
-
-.pane h3 {
-  font-size: 100px; }
-
-.mint h3 {
-  color: #abdb6c; }
-
-.fever h3 {
-  color: #be2829; }
-
-.feedburner h3 {
-  color: #bf6f28; }
-
-.twitter h3 {
-  color: #51819a; }
-
-.ember h3 {
-  color: #dd6a19; }
-
-.greader h3 {
-  color: #d4def9; }
-
-.weather h3 {
-  color: #81ceff; }
-
-.whats {
-  color: #333333;
-  font-size: 12px; }
-.searchbox {
-	position: relative;
-	top: 25%;
-}
-.searchbox .submit {
-	background-color: #222;
-	border: 1px solid #ccc;
-	-webkit-border-bottom-right-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-moz-border-radius-bottomright: 5px;
-	-moz-border-radius-topright: 5px;
-	margin-left: 0;
-	height: 24px;
-	float: left;
-	color: #efefef;
-}
-.searchbox .box {
-	background-color: #222;
-	border-bottom: 1px solid #ccc;
-	border-left: 1px solid #ccc;
-	border-top: 1px solid #ccc;
-	border-right: none;
-	-webkit-border-bottom-left-radius: 5px;
-	-webkit-border-top-left-radius: 5px;
-	-moz-border-radius-bottomleft: 5px;
-	-moz-border-radius-topleft: 5px;
-	margin-right: 0;
-	height: 20px;
-	float: left;
-	color: #efefef;
-}
+    
+    .pane h3 {
+      font-size: 100px; }
+    .whats {
+      color: #333333;
+      font-size: 12px;
+     }
 #foot {
   position: fixed;
   bottom: 5px;
