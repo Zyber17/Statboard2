@@ -2,10 +2,13 @@
 function format_result($result) {
 	if($result['type'] == 0) {pane($result);} else if($result['type'] == 1) { ticker($result); } else { die(); }
 }
-
+function rename_name($name) {
+	return str_replace(' ', '', $name);
+}
 function pane($result) {
 		if($result['title']) {$title = ': '.$result['title'];}
-	$html = "<div class='pane $result[name]'>
+		$name = rename_name($result[name]);
+	$html = "<div class='pane $name'>
 		<h2>$result[name]$title</h2>
 		<h3>
 			$result[data]<span class='whats'>$result[kind]</span>
