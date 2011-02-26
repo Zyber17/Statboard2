@@ -18,17 +18,20 @@
 			'kind' => 'subscribers',
 			'type' => 0
 		);
-		if($vals[1]['tag'] == 'FEED') {
+		if($vals[2]['attributes']['CIRCULATION']) {
 			$return['data'] = $vals[2]['attributes']['CIRCULATION'];
 			return $return;
 		}else if($vals[1]['attributes']['MSG']){
 			$return['data'] = $vals[1]['attributes']['MSG'];
+			$return['kind'] = '';
 			return $return;
 		}else if($vals[2]['value']){
 			$return['data'] = 'Awareness API is Off';
+			$return['kind'] = '';
 			return $return;
 		}else {
 			$return['data'] = 'Error';
+			$return['kind'] = '';
 			return $return;
 		}
 	}
