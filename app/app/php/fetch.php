@@ -27,13 +27,18 @@
 			if($_POST['has_install'] == 1) {
 				$install = mysql_query("SELECT * FROM `logins` WHERE `pane_id` = ".$_POST['id'] );
 				$assoc = mysql_fetch_assoc($install);
-				$install = $assoc['install'];
+				$pane_install = $assoc['install'];
 			}
 			
 			$pane_function = $_POST['name'].'_function';
 			require '../../plugins/'.$_POST['author'].'/'.$_POST['name'].'/function.php';
-			$pane_result = $pane_function($username, $password, $install);
-			require 'format.php';
-			format_result($pane_result);
+			$pane_result = $pane_function($username, $password, $pane_install);
+			if($pane_result == 'kill') {
+				die();
+			}
+			else {
+				require 'format.php';
+				format_result($pane_result);
+			}
 	}
 ?>
