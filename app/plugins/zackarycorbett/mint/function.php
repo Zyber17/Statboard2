@@ -18,11 +18,10 @@
 		//[2] = total mint hits since it was installed, ['attributes'] = sthe stuff inside a tag (<tag attrbute1="blah">, ['HITS'] = all (['UNIQUE'] will give unique hits)
 		$return = array(
 			'name' => 'Mint',
-			'kind' => 'hits today',
 			'type' => 0
 		);
 		if($vals[6]['attributes']['HITS']){
-			$return['data'] = $vals[6]['attributes']['HITS'];
+			$return['data'] = array(array('data' => $vals[6]['attributes']['HITS'], 'kind' => 'hits today'), array('data' => $vals[6]['attributes']['UNIQUE'], 'kind' => 'unique hits today'), array('data' => $vals[2]['attributes']['HITS'], 'kind' => 'hits total'), array('data' => $vals[2]['attributes']['UNIQUE'], 'kind' => 'unique hits total'));
 			return $return;
 		}
 		else {
