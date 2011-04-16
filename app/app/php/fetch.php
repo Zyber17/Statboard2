@@ -1,7 +1,6 @@
 <?php
 	function start() {
 		require 'retrieve.php';
-		require 'format.php';
 		require '../../config/db.php';
 		
 		$con = mysql_connect($database['server'], $database['username'], $database['password']) or die(mysql_error());
@@ -37,8 +36,7 @@
 				die();
 			}
 			else {
-				require 'format.php';
-				format_result($pane_result);
+				echo json_encode($pane_result);
 			}
 	}
 ?>
