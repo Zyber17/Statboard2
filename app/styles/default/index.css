@@ -1,6 +1,6 @@
 @media only screen and (max-device-width:480px) {
   html {
-    overflow: auto;
+	overflow: auto;
   }
 }
 
@@ -87,24 +87,48 @@ a:active {
   text-align: center;
   display: inline-block; }
   .pane:hover {
-    background-color: rgba(255,255,255,0.025); }
+	background-color: rgba(255,255,255,0.025); }
   .pane h2 {
-    font-size: 24px; }
-    
-    .pane h3 {
-      font-size: 100px; }
-    .whats {
-      color: #333333;
-      font-size: 12px;
-     }
-#foot {
+	font-size: 24px; }
+	
+	.pane h3 {
+	  font-size: 100px; }
+	.whats {
+	  color: #333333;
+	  font-size: 12px;
+	 }
+	.pane div {
+		-webkit-transition: opacity 0.5s ease;
+		opacity: 0;
+		height: 0px;
+	}
+		.s {
+			opacity: 1 !important;
+		}
+#bar {
   position: fixed;
-  bottom: 5px;
-  left: 5px; }
-  #foot h3 {
-    font-size: 13px;
-    display: inline;
-    color: #333333; }
+  bottom: 0px;
+  opacity: 0.6;
+  background: #111;
+  height: 5px;
+  width: 100%;
+}
+	#timer {
+		background-color: #333;
+		height: 5px;
+		-webkit-animation: progress 900.8s infinite;
+	}
+	@-webkit-keyframes progress {
+			0% {
+				width: 0%;
+			}
+			99.91119% {
+				width: 100%;
+			}
+			100% {
+				width: 0%;
+			}
+	}
 
 a.updatelink:link, a.updatelink:visited {
   color: #eb0068; }
