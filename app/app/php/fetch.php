@@ -1,10 +1,6 @@
 <?php
 	function start() {
 		require 'retrieve.php';
-//		require '../../config/db.php';
-//		
-//		$con = mysql_connect($database['server'], $database['username'], $database['password']) or die(mysql_error());
-//		$db = mysql_select_db($database['database'], $con) or die(mysql_error());
 		return retrieve();
 	}
 	if($_POST['start'] == true) finishup();
