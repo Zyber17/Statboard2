@@ -7,35 +7,38 @@
 				
 				$search = mysql_query("SELECT * FROM `panes` WHERE `author` = '".$_POST['author']."'AND `name`= '".$_POST['function']."'");
 				if(mysql_num_rows($search) == 0){
-				require_once '../../plugins/'.$_POST['author'].'/'.$_POST['function'].'/function.php';
+					require_once '../../plugins/'.$_POST['author'].'/'.$_POST['function'].'/function.php';
 					$query = "INSERT INTO `panes` (`id`, `name`, `author`, `type`, `has_install`, `has_username`, `has_password`, `has_title`) VALUES (NULL, '$install[name]', '$install[author]', '$install[type]', '$install[has_install]', '$install[has_username]', '$install[has_password]', '$install[has_title]');";
 					mysql_query($query);
-					echo '<h1>Houston, we have success.</h1>';
-					
-					if($install['has_install']) {
-						$in = '<label for="author">The pane\'s install\'s location.</label><br />
-						<input type="text" name="install" value="" />
-						<br /><br />';
-					}
-					if($install['has_username']) {
-						$user = '<label for="author">The pane\'s accounts\'s username.</label><br />
-						<input type="text" name="username" value="" />
-						<br /><br />';
-					}
-					if($install['has_password']) {
-						$pass = '<label for="author">The pane\'s accounts\'s password.</label><br />
-						<input type="text" name="password" value="" />
-						<br /><br />';
-					}
-					if($install['has_install'] || $install['has_username'] || $install['has_password']) {
-						echo '<form method="post" action="install.php">'.$in.$user.$pass.'<h3>The below button is a submit button, FYI</h3><input type="submit" name="submit" value="'.$install[author].'/'.$install[name].'" />
-						</form><h2>PS: Ignore the stuff below</h2>';
-					}
-					
+					echo '<h1>Houston, we have success.</h1>';	
 				}else{
-					echo '<h1>Already installed.</h1>';
+					echo '<h1>New instance created.</h1>';
 				}
-		
+				if(!$install['has_install'] && !$install['has_username'] && !$install['has_password']) {
+					$search2 = mysql_query("SELECT * FROM `panes` WHERE `author` = '".$_POST['author']."'AND `name`= '".$_POST['function']."'");
+					$idfinder = mysql_fetch_assoc($search2);
+					$query2 = "INSERT INTO `logins` (`id`, `pane_id`) VALUES (NULL, '$idfinder[id]');";
+					mysql_query($query2);
+				}
+				if($install['has_install']) {
+					$in = '<label for="author">The pane\'s install\'s location.</label><br />
+					<input type="text" name="install" value="" />
+					<br /><br />';
+				}
+				if($install['has_username']) {
+					$user = '<label for="author">The pane\'s accounts\'s username.</label><br />
+					<input type="text" name="username" value="" />
+					<br /><br />';
+				}
+				if($install['has_password']) {
+					$pass = '<label for="author">The pane\'s accounts\'s password.</label><br />
+					<input type="text" name="password" value="" />
+					<br /><br />';
+				}
+				if($install['has_install'] || $install['has_username'] || $install['has_password']) {
+					echo '<form method="post" action="install.php">'.$in.$user.$pass.'<h3>The below button is a submit button, FYI</h3><input type="submit" name="submit" value="'.$install[author].'/'.$install[name].'" />
+					</form><h2>PS: Ignore the stuff below</h2>';
+				}
 	}else if($_POST['install'] || $_POST['username'] || $_POST['password'] && $_POST['submit']) {
 		require_once '../../config/db.php';
 		$con = mysql_connect($database['server'], $database['username'], $database['password']) or die(mysql_error());

@@ -6,11 +6,7 @@ function init() {
 			$.post('app/app/php/fetch.php', {
 				start:true,
 				id:panes[pane].id,
-				author:panes[pane].author,
-				name:panes[pane].name,
-				has_install:panes[pane].install,
-				has_username:panes[pane].username,
-				has_password:panes[pane].password
+				pane_id:panes[pane].pane_id
 			},
 			function(response) {
 				format(response);
@@ -26,7 +22,9 @@ function load() {
 function rename_name(str) {
 	return str.split(' ').join('');
 }
-
+function debug(result) {
+	$('#data').append(result);
+}
 function format(result) {
 	if(result) {
 		var parsed = JSON.parse(result);
@@ -35,18 +33,21 @@ function format(result) {
 		if(parsed.title) {parsed.name = parsed.name+': '+parsed.title;}
 			 var html = "<div class='pane "+name+"'><h2>"+parsed.name+"</h2>";
 				if ($.isArray(parsed.data)) {
-					var num = Math.floor(Math.random()*9999);
+					var num = Math.floor(Math.random()*9999999);
 					
 					for (x in parsed.data) {
 					
-						//if(x == 0) { var display = 's'; } else { var display = ''; }
 						html = html + "<div id='"+num+x+"' class='"+num+"'><h3>"+parsed.data[x].data+"<span class='whats'>"+parsed.data[x].kind+"</span></h3></div>";
 	
 					}
 					html = html + "<script type='text/javascript'>rotate("+num+",0);</script>";	
 				}
 				else {
-					html = html + "<h3>"+parsed.data+"<span class='whats'>"+parsed.kind+"</span></h3>";
+					html = html + "<h3>"+parsed.data
+						if(parsed.kind) {
+							html = html +"<span class='whats'>"+parsed.kind+"</span>"
+						}
+					html = html + "</h3>";
 				}
 		html = html + "</div>";
 			
