@@ -6,8 +6,8 @@
 				$db = mysql_select_db($database['database'], $con) or die(mysql_error());
 				
 				$search = mysql_query("SELECT * FROM `panes` WHERE `author` = '".$_POST['author']."'AND `name`= '".$_POST['function']."'");
+				require_once '../../plugins/'.$_POST['author'].'/'.$_POST['function'].'/function.php';
 				if(mysql_num_rows($search) == 0){
-					require_once '../../plugins/'.$_POST['author'].'/'.$_POST['function'].'/function.php';
 					$query = "INSERT INTO `panes` (`id`, `name`, `author`, `type`, `has_install`, `has_username`, `has_password`, `has_title`) VALUES (NULL, '$install[name]', '$install[author]', '$install[type]', '$install[has_install]', '$install[has_username]', '$install[has_password]', '$install[has_title]');";
 					mysql_query($query);
 					echo '<h1>Houston, we have success.</h1>';	
