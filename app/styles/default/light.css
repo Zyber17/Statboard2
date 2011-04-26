@@ -1,0 +1,27 @@
+a:link, a:visited {
+  color: #444444;
+  text-decoration: none; 
+  cursor: pointer; }
+a:hover {
+  color: #444444;
+  text-decoration: underline; }
+a:active {
+  color: #444444; }
+a.updatelink:link, a.updatelink:visited {
+  color: #eb0068; }
+.pane {
+	color: #111;
+	background-color: #eee;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.whats {
+	color: #bbb;
+	text-shadow: none;
+}
+#bar {
+  opacity: 0.6;
+  background-color: #111;
+}
+	#timer {
+		background-color: #999;
+	}	

@@ -51,25 +51,12 @@ body {
   right: 7px;
   overflow-y: auto;
   overflow-x: hidden;
-  background: rgba(0,0,0,0.95);
   font-family: Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;
-  color: #efefef;
   line-height: 1.5; }
-
-a:link, a:visited {
-  color: #444444;
-  text-decoration: none; 
-  cursor: pointer; }
-a:hover {
-  color: #444444;
-  text-decoration: underline; }
-a:active {
-  color: #444444; }
 
 #wrapper {
   position: absolute;
-  width: 100%;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.5); }
+  width: 100%;}
 
 #data {
   padding: 10px 3px 10px 10px;
@@ -79,22 +66,18 @@ a:active {
   min-width: 180px;
   height: 170px;
   border: none;
-  background-color: rgba(255,255,255,0.035);
   padding: 10px;
   margin: 5px;
   float: left;
   -webkit-border-radius: 4px;
   text-align: center;
   display: inline-block; }
-  .pane:hover {
-	background-color: rgba(255,255,255,0.025); }
   .pane h2 {
 	font-size: 24px; }
 	
 	.pane h3 {
 	  font-size: 100px; }
 	.whats {
-	  color: #333333;
 	  font-size: 12px;
 	 }
 	.pane div {
@@ -108,13 +91,10 @@ a:active {
 #bar {
   position: fixed;
   bottom: 0px;
-  opacity: 0.6;
-  background: #111;
   height: 5px;
   width: 100%;
 }
 	#timer {
-		background-color: #333;
 		height: 5px;
 		-webkit-animation: progress 900.8s infinite;
 	}
@@ -129,9 +109,6 @@ a:active {
 				width: 0%;
 			}
 	}
-
-a.updatelink:link, a.updatelink:visited {
-  color: #eb0068; }
 
 #updates {
   margin-left: 15px; }
