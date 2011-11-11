@@ -15,7 +15,13 @@ a.updatelink:link, a.updatelink:visited {
   color: #eb0068; }
 #wrapper {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.5); }
-
+#install {
+	background-color: #222;
+	-webkit-box-shadow: -1px 1px 4px #333;
+}
+	#install a {
+		color: #efefef;
+	}
 .pane {
   background-color: rgba(255,255,255,0.035); }
   
