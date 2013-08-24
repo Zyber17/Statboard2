@@ -1,0 +1,1 @@
+This project now replaced with [colbyl/stata](https://github.com/colbyl/stata).

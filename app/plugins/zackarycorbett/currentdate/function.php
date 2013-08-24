@@ -13,8 +13,7 @@
 			return array(
 				'name' => 'Current Date',
 				'type' => 0,
-				'data' => date('n-j'),
-				'kind' => null
+				'data' => date('n-j')
 			);
 		}
 ?>

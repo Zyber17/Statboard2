@@ -51,8 +51,16 @@ body {
   right: 7px;
   overflow-y: auto;
   overflow-x: hidden;
-  font-family: Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
   line-height: 1.5; }
+
+#install {
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	padding: 10px;
+	line-height: 1;
+}
 
 #wrapper {
   position: absolute;

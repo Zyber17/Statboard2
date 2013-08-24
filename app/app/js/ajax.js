@@ -38,9 +38,10 @@ function format(result) {
 					for (x in parsed.data) {
 					
 						html = html + "<div id='"+num+x+"' class='"+num+"'><h3>"+parsed.data[x].data+"<span class='whats'>"+parsed.data[x].kind+"</span></h3></div>";
+						
 	
 					}
-					html = html + "<script type='text/javascript'>rotate("+num+",0);</script>";	
+					html = html + "<script type='text/javascript'>rotate("+num+",0,"+x+");</script>";	
 				}
 				else {
 					html = html + "<h3>"+parsed.data
@@ -81,10 +82,10 @@ function a(arr,level) {
 function is_array(input){
     return typeof(input)=='object'&&(input instanceof Array);
 }
-function rotate(id,number) {
+function rotate(id,number,num) {
 	$('.'+id).removeClass('s');
 	$('#'+id+number).addClass('s');
 	number++;
-	number = number%4;
-	setTimeout('rotate('+id+','+number+')',5000);
+	number = number%(num+1);
+	setTimeout('rotate('+id+','+number+','+num+')',5000);
 }

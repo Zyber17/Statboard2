@@ -3,14 +3,14 @@ body {
 	color: #efefef;
 }
 a:link, a:visited {
-  color: #444444;
+  color: #eb0068;
   text-decoration: none; 
   cursor: pointer; }
 a:hover {
-  color: #444444;
+  color: #eb0068;
   text-decoration: underline; }
 a:active {
-  color: #444444; }
+  color: #eb0068; }
 a.updatelink:link, a.updatelink:visited {
   color: #eb0068; }
 #wrapper {
@@ -36,4 +36,17 @@ background-color: rgba(255,255,255,0.025); }
 }
 	#timer {
 		background-color: #333;
+	}
+
+/*form*/
+input {
+	background-color: #2f2f2f;
+	border-color: #555;
+	color: #efefef;
+}
+	input.submit:hover, input:focus {
+		border-color: #345533;
+	}
+	a.statboard:link, a.statboard:visited {
+		color: #efefef;
 	}

@@ -1,0 +1,58 @@
+#wrapper {
+	font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	margin: 20px auto;
+}
+#wrapper.form {
+	width: 200px;
+}
+#wrapper.plugins {
+	width: 600px;
+}
+h1 {
+	font-weight: 100;
+	font-size: 60px;
+	letter-spacing: -4px;
+	margin-bottom: 20px;
+}
+h2 {
+	font-weight: 200;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+ul li {
+	list-style: disc;
+	list-style-position: inside;
+	margin: 5px 0;
+	font-size: 20px;
+}
+input {
+	border-radius: 5px;
+	padding: 5px;
+	width: 186px;
+	margin: 3px 0;
+	border: 2px solid;
+	font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	-webkit-transition: border-color .2s linear;
+}
+input.submit {
+	cursor: pointer;
+}
+a.linkbutton {
+	border-radius: 5px;
+	padding: 6px;
+	width: 273px;
+	margin: 3px 0;
+	display: block;
+	border: 2px solid;
+	font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	font-size: 15px;
+	text-align: center;
+	font-weight: 300;
+	-webkit-transition: border-color .2s linear;
+	float: left;
+}
+a.linkbutton:last-of-type {
+	margin-left: 10px;
+}
